@@ -28,15 +28,10 @@ fi
 function help() {
     cat <<EOF
 Syntax:
-
   $myname [-j 2] <rom type> <variant>...
-
 Options:
-
   -j   number of parallel make workers (defaults to $jobs)
-
 ROM types:
-
   aex-pie
   aicp-oreo
   aokp-oreo
@@ -63,7 +58,7 @@ ROM types:
   slim-oreo
   graphene9
   graphene10
-
+  havocos
 Variants are dash-joined combinations of (in order):
 * processor type
   * "arm" for ARM 32 bit
@@ -80,9 +75,7 @@ Variants are dash-joined combinations of (in order):
   * "eng" for eng build
   * "user" for prod build
   * "userdebug" for debug build (default)
-
 for example:
-
 * arm-aonly-vanilla-nosu-user
 * arm64-ab-gapps-su
 * a64-aonly-go-nosu
@@ -284,14 +277,24 @@ function get_rom_type() {
                 extra_make_options="WITHOUT_CHECK_API=true"
                 jack_enabled="false"
                 ;;
-	   graphene10)
-	   	mainrepo="https://github.com/GrapheneOS/platform_manifest.git"
+	    graphene10)
+		mainrepo="https://github.com/GrapheneOS/platform_manifest.git"
 		mainbranch="10"
 		localManifestBranch="android-10.0"
 		treble_generate="graphene"
 		extra_make_options="WITHOUT_CHECK_API=true"
 		jack_enabled="false"
-	   
+		;;
+            havocos)
+                mainrepo="https://github.com/Havoc-OS/android_manifest.git"
+                mainbranch="eleven"
+                localManifestBranch="android-11.0"
+                treble_generate="havocos"
+                extra_make_options=""
+                jack_enabled="false"
+	#i have no frkn idea what im doing. i tried adding HavocOS to the build script
+        #just to see if it might work. it probably wont.
+       
 	esac
         shift
     done
