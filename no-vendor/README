@@ -1,3 +1,5 @@
+Note from the forker: jesus this man was early to the party. JUST 2 DAYS AFTER ANDROID 8.1 RELEASE!?? BRUH. cool dude <3
+
 This experiment tries to make a partition table inside a partition using a loopback device.
 This makes it possible to sub-partition a "system" partition into "system" and "vendor"
 and even "oem" "odm" "factory", or whatever can be useful.
