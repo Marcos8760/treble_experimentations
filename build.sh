@@ -28,6 +28,10 @@ elif [ "$1" == "android-11.0" ];then
     manifest_url="https://android.googlesource.com/platform/manifest"
     aosp="android-11.0.0_r37"
     phh="android-11.0"
+elif [ "$1" == "havocos" ];then
+    manifest_url="https://github.com/Havoc-OS/android_manifest.git"
+    aosp="android-11.0.0_r34"
+    phh="android-11.0"
 else
 	# guess android version from version number
 	rebuild_release="yes"
