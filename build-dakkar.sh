@@ -287,8 +287,8 @@ function get_rom_type() {
 		;;
             havocos)
                 mainrepo="https://github.com/Havoc-OS/android_manifest.git"
-                mainbranch="eleven"
-                localManifestBranch="android-11.0"
+                mainbranch="11"
+                localManifestBranch="android-11.0.0_r34"
                 treble_generate="havocos"
                 extra_make_options=""
                 jack_enabled="false"
